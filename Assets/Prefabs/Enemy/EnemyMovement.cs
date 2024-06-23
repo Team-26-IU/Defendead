@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Waypoint waypoint;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 10000f;
     private int currentWaypointIndex = 0;
     private Vector3 targetPosition;
 
@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        if (Vector3.Distance(transform.position, targetPosition) < 200f)
         {
             currentWaypointIndex++;
             if (currentWaypointIndex < waypoint.Points.Length)
