@@ -58,7 +58,7 @@ public class Tower : MonoBehaviour
             if (enemy)
             {
                 Debug.Log(enemy + " take a damage, now he have: " + enemy.currentHealth);
-                enemy.TakeDamage(damage);
+                enemy.health.DealDamage(damage);
             }
         }
     }
