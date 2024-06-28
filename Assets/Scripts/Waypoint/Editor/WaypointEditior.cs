@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(Waypoint))]
 public class WaypointEditor : Editor
 {
+    
     Waypoint Waypoint => target as Waypoint;
     private void OnSceneGUI()
     {
@@ -13,23 +15,28 @@ public class WaypointEditor : Editor
         for (int i = 0; i < Waypoint.Points.Length; i++)
         {
             EditorGUI.BeginChangeCheck();
+            
+            // Create Handles
             Vector3 currentWaypointPoint = Waypoint.CurrentPosition + Waypoint.Points[i];
-            var fmh_18_17_638536506969791880 = Quaternion.identity; Vector3 newWaypointPoint = Handles.FreeMoveHandle(currentWaypointPoint, 0.7f,
+            var fmh_22_17_638551264617450740 = Quaternion.identity; Vector3 newWaypointPoint = Handles.FreeMoveHandle(currentWaypointPoint, 0.7f, 
                 new Vector3(0.3f, 0.3f, 0.3f), Handles.SphereHandleCap);
+            
+            // Create text
             GUIStyle textStyle = new GUIStyle();
             textStyle.fontStyle = FontStyle.Bold;
             textStyle.fontSize = 16;
             textStyle.normal.textColor = Color.white;
             Vector3 textAlligment = Vector3.down * 0.35f + Vector3.right * 0.35f;
-            Handles.Label(Waypoint.CurrentPosition + Waypoint.Points[i] + textAlligment,
+            Handles.Label(Waypoint.CurrentPosition + Waypoint.Points[i] + textAlligment, 
                 $"{i + 1}", textStyle);
             EditorGUI.EndChangeCheck();
+
             if (EditorGUI.EndChangeCheck())
-            { 
+            {
                 Undo.RecordObject(target, "Free Move Handle");
                 Waypoint.Points[i] = newWaypointPoint - Waypoint.CurrentPosition;
             }
         }
     }
+    
 }
-

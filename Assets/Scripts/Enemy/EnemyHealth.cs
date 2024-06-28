@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,40 +6,25 @@ public class EnemyHealth : MonoBehaviour
 {
     public static Action<Enemy> OnEnemyKilled;
     public static Action<Enemy> OnEnemyHit;
-    [SerializeField] private GameObject healthBarPrefab;
-    [SerializeField] private Transform barPosition;
-    [SerializeField] private float initialHealth = 10f;
-    [SerializeField] private float maxHealth = 10f;
-    
-    public float CurrentHealth { get; set; }
-    
-    private Image _healthBar;
-    private Enemy _enemy;
 
+    [SerializeField] private float maxHealth;
+    [SerializeField] private Image healthBar;
+    private float CurrentHealth { get; set; }
+    private Enemy _enemy;
+    private EnemyFX _enemyFX;
+    
     private void Start()
     {
-        CreateHealthBar();
-        CurrentHealth = initialHealth;
-        
-        _enemy = GetComponent<Enemy> () ;
+        CurrentHealth = maxHealth;
+        _enemy = GetComponent<Enemy>();
+        _enemyFX = GetComponent<EnemyFX>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            DealDamage (5f) ;
-        } 
-        _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, CurrentHealth / maxHealth, Time.deltaTime * 10f);
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount,CurrentHealth / maxHealth, Time.deltaTime * 10f);
     }
-    private void CreateHealthBar ()
-        {
-            GameObject newBar = Instantiate(healthBarPrefab, barPosition.position, Quaternion.identity);
-            newBar.transform.SetParent(transform);
-            EnemyHealthContainer container = newBar.GetComponent<EnemyHealthContainer>();
-            _healthBar = container.FillAmountImage;
-        }
-
+    
     public void DealDamage(float damageReceived)
     {
         CurrentHealth -= damageReceived;
@@ -50,12 +33,11 @@ public class EnemyHealth : MonoBehaviour
             CurrentHealth = 0;
             Die();
         }
-        else
-            OnEnemyHit?.Invoke(_enemy);
     }
     
-    void Die()
+    
+    private void Die()
     {
-        Destroy(gameObject);
+      Destroy(gameObject);
     }
 }

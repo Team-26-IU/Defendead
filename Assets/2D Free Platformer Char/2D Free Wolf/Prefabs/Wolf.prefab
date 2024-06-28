@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 4385863451500172}
   - component: {fileID: 212403299387223614}
   - component: {fileID: 95427405674940160}
+  - component: {fileID: 615458973928002004}
+  - component: {fileID: 7700589983165608943}
+  - component: {fileID: 1130652240630308616}
+  - component: {fileID: 3863045060881396094}
+  - component: {fileID: 4827535687842322220}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -95,7 +100,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991867599321214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa, type: 2}
   m_CullingMode: 0
@@ -108,6 +113,108 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &615458973928002004
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991867599321214}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.4, y: 1.52}
+    newSize: {x: 2.4, y: 1.52}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &7700589983165608943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991867599321214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945775276cff14344a2de57eac6e0961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarPrefab: {fileID: 8125685064651443767}
+  barPosition: {fileID: 1039836122722083235}
+  initialHealth: 50
+  maxHealth: 50
+--- !u!114 &1130652240630308616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991867599321214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34239812a597e4a918d4d3201016abb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  deathCoinReward: 5
+  Waypoint: {fileID: 0}
+--- !u!114 &3863045060881396094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991867599321214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadc3064027164704aaa5789eb25de15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDamageSpawnPosition: {fileID: 804675595814056632}
+--- !u!114 &4827535687842322220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991867599321214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b087c9bdea3e4638bfc4825d85ae77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticles: {fileID: 0}
 --- !u!1 &2913915826754070104
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -195,7 +302,6 @@ GameObject:
   - component: {fileID: 3556429903127723619}
   - component: {fileID: 1985267349671377391}
   - component: {fileID: 6167653931891793528}
-  - component: {fileID: 121454857997375514}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -250,29 +356,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &121454857997375514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3734991157757433390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34239812a597e4a918d4d3201016abb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmountImage: {fileID: 6167653931891793528}
 --- !u!1 &7065735172692158971
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +441,7 @@ GameObject:
   - component: {fileID: 5179048832349877074}
   - component: {fileID: 6425675375525971066}
   - component: {fileID: 3501384033818310519}
-  - component: {fileID: 5056742666516946230}
+  - component: {fileID: 655824960416136579}
   m_Layer: 0
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -439,7 +532,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5056742666516946230
+--- !u!114 &655824960416136579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -448,7 +541,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8125685064651443767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34239812a597e4a918d4d3201016abb1, type: 3}
+  m_Script: {fileID: 11500000, guid: e4905104fba6499eaa73d426d07da8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmountImage: {fileID: 0}
+  fillAmountImage: {fileID: 6167653931891793528}

@@ -4,7 +4,7 @@ public class Tower : MonoBehaviour
 {
     public float attackRadius = 5f;
     public float attackInterval = 1f;
-    public int damage = 10;
+    public int damage = 4;
 
     private float attackTimer;
     private Transform target;
@@ -16,6 +16,8 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
+      
+
         FindTarget();
         if (target)
         {
@@ -57,8 +59,7 @@ public class Tower : MonoBehaviour
             Enemy enemy = target.GetComponent<Enemy>();
             if (enemy)
             {
-                Debug.Log(enemy + " take a damage, now he have: " + enemy.currentHealth);
-                enemy.health.DealDamage(damage);
+                enemy.EnemyHealth.DealDamage(damage);
             }
         }
     }
