@@ -17,7 +17,7 @@ public class BuildingCreation : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 mousePosition = Input.mousePosition;
-                Vector2 panelOffset = new Vector2(150f, -50f);
+                Vector2 panelOffset = new Vector2(100f, -50f);
                 
                 Vector2 rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.zero);
