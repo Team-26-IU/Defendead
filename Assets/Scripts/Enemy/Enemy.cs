@@ -36,13 +36,13 @@ public class Enemy : MonoBehaviour
         MoveSpeed = moveSpeed;
         _lastPointPosition = transform.position;
         DeathCoinReward = deathCoinReward;
+        Rotate();
     }
 
     private void Update()
     {
         Move();
-        Rotate();
-        
+        Rotate();   
         if (CurrentPointPositionReached())
         {
             UpdateCurrentPointIndex();
