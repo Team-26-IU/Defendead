@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public static Action<Enemy> OnEndReached;
-    
+    public MainBuilding mainBuilding; 
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private int deathCoinReward = 2;
 
@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     
     private void Start()
     {
+        mainBuilding = FindObjectOfType<MainBuilding>();
         _enemyHealth = GetComponent<EnemyHealth>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         EnemyHealth = GetComponent<EnemyHealth>();
@@ -102,10 +103,19 @@ public class Enemy : MonoBehaviour
 
     private void EndPointReached()
     {
-        // OnEndReached?.Invoke(this);
-        // _enemyHealth.ResetHealth();
-        // ObjectPooler.ReturnToPool(gameObject);
+        // Проверяем, есть ли ссылка на главное здание
+        if (mainBuilding != null)
+        {
+            // Наносим урон главному зданию
+            mainBuilding.TakeDamage(10); // Пример: наносим 10 урона
+        }
+
+        OnEndReached?.Invoke(this); // Вызываем событие о достижении конечной точки
+        _enemyHealth.ResetHealth(); // Сбрасываем здоровье врага
+        ObjectPooler.ReturnToPool(gameObject); // Возвращаем врага в пул объектов
     }
+
+    
 
     public void ResetEnemy()
     {

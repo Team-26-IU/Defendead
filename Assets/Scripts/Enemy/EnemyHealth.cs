@@ -35,7 +35,11 @@ public class EnemyHealth : MonoBehaviour
         }
     }
     
-    
+    public void ResetHealth()
+    {
+        CurrentHealth = maxHealth;
+        healthBar.fillAmount = 1f;
+    }
     private void Die()
     {
       Destroy(gameObject);
