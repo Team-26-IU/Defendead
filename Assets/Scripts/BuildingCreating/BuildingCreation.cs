@@ -33,7 +33,7 @@ public class BuildingCreation : MonoBehaviour
 
     public void BuildTurret(GameObject turretPrefab)
     {
-        Vector2 diffPosition = new Vector2(0f, 100f);
+        Vector2 diffPosition = new Vector2(0f, 120f);
         Vector2 towerPosition = buildPlace.transform.position;
         Quaternion buildRotation = buildPlace.transform.rotation;
         GameObject turretInstance = Instantiate(turretPrefab, towerPosition + diffPosition, buildRotation);
