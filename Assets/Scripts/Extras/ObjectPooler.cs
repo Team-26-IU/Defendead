@@ -37,7 +37,7 @@ public class ObjectPooler : MonoBehaviour
         for (int i = 0; i < _pool.Count; i++)
         {
             // Проверяем, что объект существует и активен
-            if (_pool[i] != null && _pool[i].activeInHierarchy)
+            if (_pool[i] && _pool[i].activeInHierarchy)
             {
                 return _pool[i];
             }
@@ -50,7 +50,7 @@ public class ObjectPooler : MonoBehaviour
 
     public static void ReturnToPool(GameObject instance)
     {
-        if (instance != null && instance.activeSelf)
+        if (instance && instance.activeSelf)
         {
             Debug.Log($"Returning {instance.name} to pool.");
             instance.SetActive(false);
