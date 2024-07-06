@@ -176,8 +176,9 @@ unit_tests:
     # Активируем лицензию
     - /opt/Unity/Editor/Unity -batchmode -nographics -quit -manualLicenseFile Unity_v2022.x.ulf
   script:
-    # Запуск юнит-тестов Unity
-    - /opt/Unity/Editor/Unity -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
+    -  which unity-editor
+    # Использовать найденный путь к Unity Editor
+    - unity-editor -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
   artifacts:
     when: always
     paths:
