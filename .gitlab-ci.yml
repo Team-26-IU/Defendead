@@ -173,10 +173,11 @@ unit_tests:
     - echo "$UNITY_LICENSE_BASE64" | base64 -d > Unity_v2022.x.ulf
     # Проверка содержимого декодированного файла
     - cat Unity_v2022.x.ulf
+    - which unity-editor
     # Активируем лицензию
-    - /opt/Unity/Editor/Unity -batchmode -nographics -quit -manualLicenseFile Unity_v2022.x.ulf
+    - unity-editor -batchmode -nographics -quit -manualLicenseFile Unity_v2022.x.ulf
   script:
-    -  which unity-editor
+    - which unity-editor
     # Использовать найденный путь к Unity Editor
     - unity-editor -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
   artifacts:
