@@ -79,7 +79,6 @@ get-activation-file:
     - gitlab-org
   coverage: /<Linecoverage>(.*?)</Linecoverage>/
 
-Tests without junit reporting results in GitLab
 test-playmode:
   <<: *test
   variables:
