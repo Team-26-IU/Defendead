@@ -168,18 +168,24 @@ get-activation-file:
 unit_tests:
   stage: unit_tests
   image: unityci/editor:2022.3.32f1-base-3.1.0
+  before_script:
+    # Декодируем содержимое переменной обратно в файл
+    - echo "$UNITY_LICENSE_BASE64" | base64 -d > Unity_v2022.x.ulf
+    # Проверка содержимого декодированного файла
+    - cat Unity_v2022.x.ulf
+    # Активируем лицензию
+    - /opt/Unity/Editor/Unity -batchmode -nographics -quit -manualLicenseFile Unity_v2022.x.ulf
   script:
-    # Проверить, где находится Unity Editor
-    - which unity-editor
-    # Использовать найденный путь к Unity Editor
-    - unity-editor -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
+    # Запуск юнит-тестов Unity
+    - /opt/Unity/Editor/Unity -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
   artifacts:
     when: always
     paths:
       - results.xml
   only:
     - main
-    - testing # Adjust this to match the branch you want to run tests on
+    - testing
+
 
 
 # build-WebGL:
