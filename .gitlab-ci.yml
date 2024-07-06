@@ -1,0 +1,36 @@
+stages:
+  - lint
+
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+  DOTNET_NOLOGO: "true"
+  NUGET_XMLDOC_MODE: "skip"
+  NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+  DOTNET_SDK_VERSIONS: "6.0.x 7.0.x 8.0.x"  # Установите версии SDK, которые вам нужны
+
+lint:
+  stage: lint
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  script:
+    - dotnet tool install -g dotnet-format
+    - export PATH="$PATH:/root/.dotnet/tools"
+    - dotnet format --verify-no-changes --verbosity detailed
+
+# test:
+#   stage: test
+#   image: mcr.microsoft.com/dotnet/sdk:6.0
+#   services:
+#     - name: codecov/codecov-action
+#   cache:
+#     key: "$CI_COMMIT_REF_SLUG"
+#     paths:
+#       - .nuget/packages/
+#   script:
+#     - dotnet restore
+#     - dotnet build --no-restore
+#     - dotnet test --framework net6.0 --no-build -p:TestingPlatformCommandLineArguments="--coverage --coverage-output-format cobertura --coverage-output cobertura.xml"
+#   artifacts:
+#     paths:
+#       - ./test/Sample.Test/bin/Debug/net6.0/TestResults/cobertura.xml
+#   after_script:
+#     - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -f ./test/Sample.Test/bin/Debug/net6.0/TestResults/cobertura.xml
