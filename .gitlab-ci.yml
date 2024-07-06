@@ -167,7 +167,7 @@ get-activation-file:
 
 unit_tests:
   stage: unit_tests
-  image: $IMAGE:$UNITY_VERSION-base-$IMAGE_VERSION
+  image: $IMAGE:$UNITY_VERSION-base-3.1.0
   script:
     # Run Unity unit tests
     - /opt/Unity/Editor/Unity -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
