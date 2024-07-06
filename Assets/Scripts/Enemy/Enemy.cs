@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public static Action<Enemy> OnEndReached;
+    public Action OnEnemyDestroyed; 
     public MainBuilding mainBuilding;
     protected float moveSpeed;
     protected int deathCoinReward;
@@ -112,7 +113,12 @@ public abstract class Enemy : MonoBehaviour
 
         OnEndReached?.Invoke(this);
         EnemyHealth.ResetHealth();
-        ObjectPooler.ReturnToPool(gameObject);
+        ObjectPooler.Instance.ReturnToPool(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        OnEnemyDestroyed?.Invoke();
     }
 
     public void ResetEnemy()

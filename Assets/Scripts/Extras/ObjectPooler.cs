@@ -4,65 +4,75 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private int poolSize = 10;
-    private List<GameObject> _pool;
-    private GameObject _poolContainer;
+    public static ObjectPooler Instance;
+    
+    [System.Serializable]
+    public class Pool
+    {
+        public string tag;
+        public GameObject prefab;
+        public int size;
+    }
+
+    public List<Pool> pools;
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
 
     private void Awake()
     {
-        _pool = new List<GameObject>();
-        _poolContainer = new GameObject($"Pool - {prefab.name}");
-        CreatePooler();
-    }
-
-    private void CreatePooler()
-    {
-        for (int i = 0; i < poolSize; i++)
+        if (Instance == null)
         {
-            _pool.Add(CreateInstance());
+            Instance = this;
         }
-    }
-
-    private GameObject CreateInstance()
-    {
-        GameObject newInstance = Instantiate(prefab);
-        newInstance.transform.SetParent(_poolContainer.transform);
-        newInstance.SetActive(false);
-        return newInstance;
-    }
-
-    public GameObject GetInstanceFromPool()
-    {
-        for (int i = 0; i < _pool.Count; i++)
+        else
         {
-            // Проверяем, что объект существует и активен
-            if (_pool[i] && _pool[i].activeInHierarchy)
+            Destroy(gameObject);
+            return;
+        }
+
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+
+        foreach (Pool pool in pools)
+        {
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+
+            for (int i = 0; i < pool.size; i++)
             {
-                return _pool[i];
+                GameObject obj = Instantiate(pool.prefab);
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
             }
-        }
 
-        // Если не найден активный объект в пуле, создаем новый
-        return CreateInstance();
+            poolDictionary.Add(pool.tag, objectPool);
+        }
     }
 
+    public GameObject GetInstanceFromPool(string tag)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            return null;
+        }
 
-    public static void ReturnToPool(GameObject instance)
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+        poolDictionary[tag].Enqueue(objectToSpawn);
+
+        return objectToSpawn;
+    }
+
+    public void ReturnToPool(GameObject instance)
     {
         if (instance && instance.activeSelf)
         {
-            Debug.Log($"Returning {instance.name} to pool.");
             instance.SetActive(false);
             instance.GetComponent<Enemy>().ResetEnemy();
         }
     }
 
-
-    public static IEnumerator ReturnToPoolWithDelay(GameObject instance, float delay)
+    public IEnumerator ReturnToPoolWithDelay(GameObject instance, float delay)
     {
         yield return new WaitForSeconds(delay);
         instance.SetActive(false);
-        instance.GetComponent<Enemy>().ResetEnemy();  // Сбрасываем состояние врага
+        instance.GetComponent<Enemy>().ResetEnemy();
     }
 }

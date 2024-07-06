@@ -168,8 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3132fdba3d14b45cbbd264f7a94b1f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 5
-  testGO: {fileID: 1982527853}
+  waves:
+  - defaultEnemyCount: 2
+    heavyEnemyCount: 0
+    stealthEnemyCount: 2
+  - defaultEnemyCount: 4
+    heavyEnemyCount: 0
+    stealthEnemyCount: 4
   delayBtwSpawns: 2
 --- !u!114 &28778001
 MonoBehaviour:
@@ -217,8 +222,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005aa1a3397584d239d3070f97a77f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1982527853}
-  poolSize: 5
+  pools:
+  - tag: DefaultEnemy
+    prefab: {fileID: 195540707}
+    size: 6
+  - tag: StealthEnemy
+    prefab: {fileID: 1982527853}
+    size: 6
 --- !u!1 &30872907
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +581,7 @@ GameObject:
   - component: {fileID: 195540716}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: StealthEnemy
+  m_TagString: DefaultEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -711,7 +721,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -1681180648, guid: dd0a04f74bfe5bc4b86d02fb2a9062e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3077,7 +3087,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 1208352067, guid: 65e01afe76111494fa680e8e1aa51d8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
