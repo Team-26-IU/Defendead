@@ -4,8 +4,7 @@ stages:
   - build_and_test
   - unit_tests
 
-# If you are looking for a place where to add 'UNITY_LICENSE_FILE' and other secrets, please visit your project's gitlab page:
-# settings > CI/CD > Variables instead
+
 variables:
   BUILD_NAME: TowerDefenceGame
   UNITY_ACTIVATION_FILE: ./unity3d.alf
@@ -185,15 +184,15 @@ unit_tests:
     - testing # Adjust this to match the branch you want to run tests on
 
 
-build-WebGL:
-  <<: *build
-  image: $IMAGE:$UNITY_VERSION-webgl-$IMAGE_VERSION
-  # Temporary workaround for https://github.com/game-ci/docker/releases/tag/v0.9 and webgl support in current project to prevent errors with missing ffmpeg
-  before_script:
-    - chmod +x ./ci/before_script.sh && ./ci/before_script.sh
-    - apt-get update && apt-get install ffmpeg -y
-  variables:
-    BUILD_TARGET: WebGL
+# build-WebGL:
+#   <<: *build
+#   image: $IMAGE:$UNITY_VERSION-webgl-$IMAGE_VERSION
+#   # Temporary workaround for https://github.com/game-ci/docker/releases/tag/v0.9 and webgl support in current project to prevent errors with missing ffmpeg
+#   before_script:
+#     - chmod +x ./ci/before_script.sh && ./ci/before_script.sh
+#     - apt-get update && apt-get install ffmpeg -y
+#   variables:
+#     BUILD_TARGET: WebGL
 
 
 pages:
