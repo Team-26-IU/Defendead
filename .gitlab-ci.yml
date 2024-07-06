@@ -167,10 +167,12 @@ get-activation-file:
 
 unit_tests:
   stage: unit_tests
-  image: $IMAGE:$UNITY_VERSION-base-3.1.0
+  image: unityci/editor:2022.3.32f1-base-3.1.0
   script:
-    # Run Unity unit tests
-    - /opt/Unity/Editor/Unity -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
+    # Проверить, где находится Unity Editor
+    - which unity-editor
+    # Использовать найденный путь к Unity Editor
+    - unity-editor -runTests -projectPath . -testPlatform PlayMode -logFile - -testResults results.xml
   artifacts:
     when: always
     paths:
@@ -178,6 +180,7 @@ unit_tests:
   only:
     - main
     - testing # Adjust this to match the branch you want to run tests on
+
 
 # build-WebGL:
 #   <<: *build
