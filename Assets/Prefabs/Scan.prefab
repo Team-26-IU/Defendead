@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3400330828692173724}
   - component: {fileID: -7499738821766202997}
-  - component: {fileID: 6964193261826925165}
+  - component: {fileID: 8162886222661622262}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Scan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,18 +74,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -94026586, guid: 9d801fc63bddc494392758a2df70227a, type: 3}
+  m_Sprite: {fileID: -551180470, guid: dad80db4da255434fbe479585e0696cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.28, y: 8.49}
+  m_Size: {x: 5.600169, y: 10.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6964193261826925165
+--- !u!114 &8162886222661622262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5859847177409199426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79fb2299f457482e9ca3ade892d2ea97, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8a5ae0cdb1406780cd289db1024fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

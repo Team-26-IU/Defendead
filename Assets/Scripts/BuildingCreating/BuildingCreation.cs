@@ -33,10 +33,12 @@ public class BuildingCreation : MonoBehaviour
 
     public void BuildTurret(GameObject turretPrefab)
     {
-        Vector2 diffPosition = new Vector2(0f, 120f);
+       
         Vector2 towerPosition = buildPlace.transform.position;
         Quaternion buildRotation = buildPlace.transform.rotation;
-        GameObject turretInstance = Instantiate(turretPrefab, towerPosition + diffPosition, buildRotation);
+        GameObject turretInstance = Instantiate(turretPrefab, towerPosition, buildRotation);
+        Tower towerScript = turretInstance.GetComponent<Tower>();
+        turretInstance.transform.position += (Vector3)towerScript.DiffPos;
         turretInstance.transform.SetParent(_towerContainer.transform);
         buildPlace.SetActive(false);
         buildMenu.SetActive(false);

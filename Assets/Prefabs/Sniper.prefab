@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3400330828692173724}
   - component: {fileID: -7499738821766202997}
-  - component: {fileID: 6964193261826925165}
+  - component: {fileID: 7997556307381797314}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 0}
+  m_LocalScale: {x: 23, y: 23, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,18 +74,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -94026586, guid: 9d801fc63bddc494392758a2df70227a, type: 3}
+  m_Sprite: {fileID: -1998588581, guid: 8d9c362fdd6aba44785cb1d8091b1028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.28, y: 8.49}
+  m_Size: {x: 0.56, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6964193261826925165
+--- !u!114 &7997556307381797314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5859847177409199426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79fb2299f457482e9ca3ade892d2ea97, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f55ab222f9a40099690c98822c2b84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
