@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public static Action<Enemy> OnEnemyKilled;
     public static Action<Enemy> OnEnemyHit;
     [SerializeField] private Image healthBar;
-    private float CurrentHealth { get; set; }
+    public float CurrentHealth { get; set; }
     private Enemy _enemy;
     private EnemyFX _enemyFX;
 

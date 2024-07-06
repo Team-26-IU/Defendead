@@ -13,9 +13,10 @@ public abstract class Enemy : MonoBehaviour
     protected bool heavy;
 
     public int DeathCoinReward { get; protected set; }
-    public float MoveSpeed { get; protected set; }
+    public int Damage{ get; protected set; }
+    public float MoveSpeed { get; set; }
     public Waypoint Waypoint;
-    public EnemyHealth EnemyHealth { get; protected set; }
+    public EnemyHealth EnemyHealth { get; set; }
 
     public Vector3 CurrentPointPosition => Waypoint.GetWaypointPosition(_currentWaypointIndex);
 
@@ -90,7 +91,7 @@ public abstract class Enemy : MonoBehaviour
         return false;
     }
 
-    private void UpdateCurrentPointIndex()
+    public void UpdateCurrentPointIndex()
     {
         int lastWaypointIndex = Waypoint.Points.Length - 1;
         if (_currentWaypointIndex < lastWaypointIndex)

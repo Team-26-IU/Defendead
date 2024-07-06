@@ -5,6 +5,8 @@ public class MainBuilding : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
+    
+    public int CurrentHealth{ get;  set; }
 
     public delegate void OnHealthChanged(int currentHealth, int maxHealth);
     public event OnHealthChanged onHealthChanged;
