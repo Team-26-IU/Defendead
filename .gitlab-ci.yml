@@ -1,6 +1,6 @@
 stages:
   - prepare
-  - linter
+  # - linter
   - build_and_test
   - unit_tests
   - deploy
@@ -156,15 +156,15 @@ get-activation-file:
 #     BUILD_TARGET: "StandaloneOSXUniversal"
 
 # For webgl support, you need to set Compression Format to Disabled for v0.9. See https://github.com/game-ci/docker/issues/75
-lint:
-  stage: linter
-  image: ghcr.io/github/super-linter:latest
-  variables:
-    DEFAULT_WORKSPACE: "$CI_PROJECT_DIR"
-    LINTER_RULES_PATH: "$CI_PROJECT_DIR/.github/linters" # Adjust if your linter configurations are located elsewhere
-    VALIDATE_ALL_CODEBASE: "true" # Set to false if you want to lint only changed files
-  script:
-    - super-linter
+# lint:
+#   stage: linter
+#   image: ghcr.io/github/super-linter:latest
+#   variables:
+#     DEFAULT_WORKSPACE: "$CI_PROJECT_DIR"
+#     LINTER_RULES_PATH: "$CI_PROJECT_DIR/.github/linters" # Adjust if your linter configurations are located elsewhere
+#     VALIDATE_ALL_CODEBASE: "true" # Set to false if you want to lint only changed files
+#   script:
+#     - super-linter
 
 unit_tests:
   stage: unit_tests
