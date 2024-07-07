@@ -3,7 +3,7 @@ stages:
   # - linter
   - build_and_test
   # - unit_tests
-  # - deploy
+  - deploy
 
 variables:
   BUILD_NAME: "TowerDefenceGame"
