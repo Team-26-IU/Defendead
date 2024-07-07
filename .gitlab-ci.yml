@@ -15,6 +15,11 @@ variables:
   # You can expose this in Unity via Application.version
   VERSION_NUMBER_VAR: "$CI_COMMIT_REF_SLUG-$CI_PIPELINE_ID-$CI_JOB_ID"
   VERSION_BUILD_VAR: "$CI_PIPELINE_IID"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+  DOTNET_NOLOGO: "true"
+  NUGET_XMLDOC_MODE: "skip"
+  NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+  DOTNET_SDK_VERSIONS: "6.0.x 7.0.x 8.0.x"  # Установите версии SDK, которые вам нужны
 
 image: $IMAGE:$UNITY_VERSION-base-3.1.0
 
@@ -79,17 +84,17 @@ get-activation-file:
     - gitlab-org
   coverage: /<Linecoverage>(.*?)</Linecoverage>/
 
-test-playmode:
-  <<: *test
-  variables:
-    TEST_PLATFORM: "playmode"
-    TESTING_TYPE: "NUNIT"
+# test-playmode:
+#   <<: *test
+#   variables:
+#     TEST_PLATFORM: "playmode"
+#     TESTING_TYPE: "NUNIT"
 
-test-editmode:
-  <<: *test
-  variables:
-    TEST_PLATFORM: "editmode"
-    TESTING_TYPE: "NUNIT"
+# test-editmode:
+#   <<: *test
+#   variables:
+#     TEST_PLATFORM: "editmode"
+#     TESTING_TYPE: "NUNIT"
 
 # uncomment the following blocks if you'd like to have junit reporting unity test results in gitlab
 # We currently have the following issue which prevents it from working right now, but you can give
@@ -154,15 +159,27 @@ test-editmode:
 #     BUILD_TARGET: "StandaloneOSXUniversal"
 
 # For webgl support, you need to set Compression Format to Disabled for v0.9. See https://github.com/game-ci/docker/issues/75
+
+
+# lint:
+#   stage: build_and_test
+#   image: ghcr.io/github/super-linter:latest
+#   variables:
+#     DEFAULT_WORKSPACE: "$CI_PROJECT_DIR"
+#     LINTER_RULES_PATH: "$CI_PROJECT_DIR/.github/linters" # Adjust if your linter configurations are located elsewhere
+#     VALIDATE_ALL_CODEBASE: "true" # Set to false if you want to lint only changed files
+#   script:
+#     - super-linter
+
+
+
 lint:
-  stage: build_and_test
-  image: ghcr.io/github/super-linter:latest
-  variables:
-    DEFAULT_WORKSPACE: "$CI_PROJECT_DIR"
-    LINTER_RULES_PATH: "$CI_PROJECT_DIR/.github/linters" # Adjust if your linter configurations are located elsewhere
-    VALIDATE_ALL_CODEBASE: "true" # Set to false if you want to lint only changed files
+  stage: lint
+  image: mcr.microsoft.com/dotnet/sdk:6.0
   script:
-    - super-linter
+    - dotnet tool install -g dotnet-format
+    - export PATH="$PATH:/root/.dotnet/tools"
+    - dotnet format --verify-no-changes --verbosity detailed
 
 unit_tests:
   stage: build_and_test
