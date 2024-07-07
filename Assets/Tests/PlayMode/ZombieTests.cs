@@ -5,14 +5,13 @@ public class EnemyTests
 {
     
     private GameObject enemyGameObject;
-    private DefaultEnemy enemy; // Assuming TestEnemy is a concrete implementation of Enemy
+    private DefaultEnemy enemy;
     private GameObject mainBuildingObject;
     private MainBuilding mainBuilding;
 
     [SetUp]
     public void Setup()
     {
-        // Initialize your GameObjects and Components here
         enemyGameObject = new GameObject();
         enemy = enemyGameObject.AddComponent<DefaultEnemy>();
         mainBuildingObject = new GameObject();
@@ -37,7 +36,7 @@ public class EnemyTests
     [Test]
     public void Enemy_resume_moving()
     {
-        float expectedMoveSpeed = 100.0f; //speed of default zombie moving
+        float expectedMoveSpeed = 100.0f; 
         enemy.StopMovement(); 
 
         enemy.ResumeMovement(); 
@@ -66,14 +65,11 @@ public class EnemyTests
     [Test]
     public void Enemy_ChangeMoveSpeedWhileMoving_UpdatesMoveSpeedCorrectly()
     {
-        // Arrange
         float newMoveSpeed = 120.0f;
         enemy.ResumeMovement();
 
-        // Act
         enemy.MoveSpeed = newMoveSpeed;
 
-        // Assert
         Assert.AreEqual(newMoveSpeed, enemy.MoveSpeed, 0.001f, "MoveSpeed should be updated to the new value while moving.");
     }
 
