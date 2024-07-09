@@ -33,8 +33,6 @@ Players must strategically place their defensive towers along the path of the on
 1) Follow the [link](https://slant14.itch.io/tower-defense) to open deployed version
 2) Wait the loading time and enjoy the game
 
-
-
 ##Frameworks and technology:
  - Unity game engine for game development, 
  - Scripting in C# for game logic
