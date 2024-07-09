@@ -23,6 +23,15 @@ Players must strategically place their defensive towers along the path of the on
 - Statistics
 - Settings menu 
 
+## Usage instructions / Short user guide
+**To play the game, follow this instructions:**
+1) Download the game and open it
+2) Click the "Play" button and choose the map to play
+3) Click again to the "Play' button on chosen map and start the game
+4) Build towers to kill all zombies and survive
+**Important note:** protected and hidden zombies can only be killed by certain towers
+
+
 ## Project Installation / Deployment
 
 **To download game to your mashine:**
