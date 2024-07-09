@@ -1,8 +1,7 @@
 # Tower defence game on Unity
-
-<div style="text-align: center">
-  <img src="Screenshoots/logo.png" width="682" height="236">
-</div>
+<p style="text-align: center;">
+  	<img src="Screenshoots/logo.png ">
+</p>
 
 ## Project Description: 
 Defendead is a open source zombie themed Tower Defense game, where players must defend the shelter against waves of attacking zombies using different types of defensive towers. 
