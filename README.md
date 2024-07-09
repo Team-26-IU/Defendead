@@ -34,8 +34,8 @@ Players must strategically place their defensive towers along the path of the on
 2) Wait the loading time and enjoy the game
 
 ## Frameworks and technology:
- - Unity game engine for game development, 
- - Scripting in C# for game logic
+ - **Unity** game engine for game development, 
+ - Scripting in **C#** for game logic
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
