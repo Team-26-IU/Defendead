@@ -1,0 +1,52 @@
+# Tower defence game on Unity
+<p style="text-align: center;">
+  	<img src="Screenshoots/logo.png ">
+</p>
+
+## Project Description: 
+Defendead is a open source zombie themed Tower Defense game, where players must defend the shelter against waves of attacking zombies using different types of defensive towers. 
+
+## Demo: 
+<img src="Screenshoots/demo_upd.gif">
+
+## How to use: 
+Players must strategically place their defensive towers along the path of the oncoming zombies to stop them from reaching their destination(shelter). They can also upgrade their towers to increase their chances to survive.
+
+## Features: 
+- Three different types of defensive towers (for each attacking zombie type)
+- Regular, invisible, and armored zombies with unique abilities 
+- Tower upgrading system
+- 2 maps
+- Wave-based gameplay with increasing difficulty
+- Shop with towers
+- In battle/game coins
+- Statistics
+- Settings menu 
+
+## Usage instructions / Short user guide
+**To play the game, follow this instructions:**
+1) Download the game and open it
+2) Click the "Play" button and choose the map to play
+3) Click again to the "Play' button on chosen map and start the game
+4) Build towers to kill all zombies and survive     
+**Important note:**  
+protected and hidden zombies can only be killed by certain towers
+
+
+## Project Installation / Deployment
+
+**To download game to your mashine:**
+1) Download **[this](MVP.app.zip)** zip-archive
+2) Extract it, you will get the .app file
+3) Run it and enjoy the game 
+
+**To play on Web:**
+1) Follow the **[link](https://slant14.itch.io/tower-defense)** to open deployed version
+2) Wait the loading time and enjoy the game
+
+## Frameworks and technology:
+ - **Unity** game engine for game development, 
+ - Scripting in **C#** for game logic
+
+## License
+This project is licensed under the **MIT License** - see the **[LICENSE](LICENSE)** file for details.
