@@ -29,18 +29,19 @@ Players must strategically place their defensive towers along the path of the on
 2) Click the "Play" button and choose the map to play
 3) Click again to the "Play' button on chosen map and start the game
 4) Build towers to kill all zombies and survive
-**Important note:** protected and hidden zombies can only be killed by certain towers
+**Important note:** 
+protected and hidden zombies can **only** be killed **by certain towers**
 
 
 ## Project Installation / Deployment
 
 **To download game to your mashine:**
-1) Download [this](MVP2.app.zip) zip-archive
+1) Download **[this](MVP2.app.zip)** zip-archive
 2) Extract it, you will get the .app file
 3) Run it and enjoy the game 
 
 **To play on Web:**
-1) Follow the [link](https://slant14.itch.io/tower-defense) to open deployed version
+1) Follow the **[link](https://slant14.itch.io/tower-defense)** to open deployed version
 2) Wait the loading time and enjoy the game
 
 ## Frameworks and technology:
@@ -48,4 +49,4 @@ Players must strategically place their defensive towers along the path of the on
  - Scripting in **C#** for game logic
 
 ## License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the **[LICENSE](LICENSE)** file for details.
