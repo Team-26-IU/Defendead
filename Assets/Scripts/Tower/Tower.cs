@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class Tower : MonoBehaviour
@@ -10,6 +9,8 @@ public abstract class Tower : MonoBehaviour
 
     private float attackTimer;
     protected Transform target;
+
+    protected GameObject bulletPrefab; 
 
     protected virtual void Start()
     {
@@ -37,16 +38,7 @@ public abstract class Tower : MonoBehaviour
 
     protected abstract void FindTarget();
 
-    private void Attack()
-    {
-        if (target)
-        {
-            Enemy enemy = target.GetComponent<Enemy>();
-            {
-                enemy.EnemyHealth.DealDamage(damage);
-            }
-        }
-    }
+    protected abstract void Attack();
 
     private void OnDrawGizmosSelected()
     {

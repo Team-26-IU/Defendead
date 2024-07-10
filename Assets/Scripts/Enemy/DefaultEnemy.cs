@@ -11,4 +11,5 @@ public class DefaultEnemy : Enemy
         heavy = false;
         hide = false;
     }
+    
 }

@@ -2,12 +2,16 @@
 
 public class ArmorPiercingTower : Tower
 {
+    [SerializeField] private GameObject armorPiercingBulletPrefab;
+
     protected override void InitializeAttributes()
     {
         attackRadius = 350f;
         attackInterval = 3f;
         damage = 50;
         diffPosition = new Vector2(15f, 130f);
+
+        bulletPrefab = armorPiercingBulletPrefab; 
     }
 
     protected override void FindTarget()
@@ -18,7 +22,7 @@ public class ArmorPiercingTower : Tower
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("HeavyEnemy"))
+            if (collider.CompareTag("HeavyEnemy") || collider.CompareTag("DefaultEnemy"))
             {
                 float distance = Vector2.Distance(transform.position, collider.transform.position);
                 if (distance < closestDistance)
@@ -30,5 +34,18 @@ public class ArmorPiercingTower : Tower
         }
 
         target = closestTarget;
+    }
+    protected override void Attack()
+    {
+        if (target)
+        {
+            Vector3 offset = new Vector3(50f, 52, 0); 
+            Vector3 newPos = transform.position + offset; // change the position with offset
+            GameObject bulletObject = Instantiate(bulletPrefab, newPos, Quaternion.identity);
+            Bullet bullet = bulletObject.GetComponent<Bullet>();
+
+            
+            bullet.Initialize(damage, target);
+        }
     }
 }
