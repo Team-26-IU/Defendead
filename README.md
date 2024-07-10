@@ -36,7 +36,7 @@ protected and hidden zombies can only be killed by certain towers
 ## Project Installation / Deployment
 
 **To download game to your mashine:**
-1) Download **[this](MVP2.app.zip)** zip-archive
+1) Download **[this](MVP.app.zip)** zip-archive
 2) Extract it, you will get the .app file
 3) Run it and enjoy the game 
 
