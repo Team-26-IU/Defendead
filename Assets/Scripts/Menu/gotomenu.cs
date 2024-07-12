@@ -7,4 +7,8 @@ public class gotomenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void LoadgotomapmenuScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

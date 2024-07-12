@@ -4,7 +4,7 @@
     {
         protected override void InitializeAttributes()
         {
-            moveSpeed = 50f;
+            moveSpeed = 75f;
             deathCoinReward = 10;
             damage = 20;
             maxHealth = 100f;

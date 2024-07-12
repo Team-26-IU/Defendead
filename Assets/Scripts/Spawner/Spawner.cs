@@ -3,51 +3,83 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Wave Settings")]
-    [SerializeField] private List<Wave> waves;
+    private List<Wave> waves;
+
     private int currentWaveIndex = 0;
     private int enemiesToSpawn;
     private int enemiesSpawned;
     private int enemiesLeftToSpawn;
-    
-    [Header("Fixed Delay")]
-    [SerializeField] private float delayBtwSpawns;
-    private float _spawnTimer; 
-    private ObjectPooler _pooler;
 
-    private int activeEnemies; 
+    private float delayBtwSpawns = 1.5f;
+    private float _spawnTimer;
+    private ObjectPooler _pooler;
+    private int activeEnemies;
 
     private void Start()
     {
         _pooler = GetComponent<ObjectPooler>();
+        InitializeWaves();
         StartWave();
     }
 
-    private void Update()
+    private void InitializeWaves()
     {
-        _spawnTimer -= Time.deltaTime;
-        if (_spawnTimer < 0)
-        {
-            _spawnTimer = delayBtwSpawns;
-            if (enemiesLeftToSpawn > 0)
-            {
-                enemiesSpawned++;
-                enemiesLeftToSpawn--;
-                SpawnEnemy();
-            }
-        }
+        waves = new List<Wave>();
+        
+        waves.Add(new Wave {
+            defaultEnemyCount = 5,
+            heavyEnemyCount = 0,
+            stealthEnemyCount = 0
+        });
+        
+        waves.Add(new Wave {
+            defaultEnemyCount = 7,
+            heavyEnemyCount = 0,
+            stealthEnemyCount = 2
+        });
+        
+        waves.Add(new Wave {
+            defaultEnemyCount = 8,
+            heavyEnemyCount = 1,
+            stealthEnemyCount = 3
+        });
+        
+        waves.Add(new Wave {
+            defaultEnemyCount = 10,
+            heavyEnemyCount = 2,
+            stealthEnemyCount = 4
+        });
 
-        if (activeEnemies == 0 && enemiesLeftToSpawn == 0 && currentWaveIndex < waves.Count - 1)
-        {
-            currentWaveIndex++;
-            StartWave();
-        }
+        waves.Add(new Wave {
+            defaultEnemyCount = 10,
+            heavyEnemyCount = 2,
+            stealthEnemyCount = 5
+        });
+
+        waves.Add(new Wave {
+            defaultEnemyCount = 12,
+            heavyEnemyCount = 3,
+            stealthEnemyCount = 6
+        });
+
+        waves.Add(new Wave {
+            defaultEnemyCount = 15,
+            heavyEnemyCount = 4,
+            stealthEnemyCount = 7
+        });
+
+        waves.Add(new Wave {
+            defaultEnemyCount = 18,
+            heavyEnemyCount = 5,
+            stealthEnemyCount = 8
+        });
     }
 
     private void StartWave()
     {
         enemiesSpawned = 0;
-        enemiesLeftToSpawn = waves[currentWaveIndex].defaultEnemyCount + waves[currentWaveIndex].heavyEnemyCount + waves[currentWaveIndex].stealthEnemyCount;
+        Wave currentWave = waves[currentWaveIndex];
+        enemiesLeftToSpawn = currentWave.defaultEnemyCount + currentWave.heavyEnemyCount + currentWave.stealthEnemyCount;
         enemiesToSpawn = enemiesLeftToSpawn;
     }
 
@@ -75,13 +107,34 @@ public class Spawner : MonoBehaviour
         if (newInstance != null)
         {
             newInstance.SetActive(true);
-            activeEnemies++; 
+            activeEnemies++;
             newInstance.GetComponent<Enemy>().OnEnemyDestroyed += HandleEnemyDestroyed;
         }
     }
 
     private void HandleEnemyDestroyed()
     {
-        activeEnemies--; 
+        activeEnemies--;
+    }
+
+    private void Update()
+    {
+        _spawnTimer -= Time.deltaTime;
+        if (_spawnTimer < 0)
+        {
+            _spawnTimer = delayBtwSpawns;
+            if (enemiesLeftToSpawn > 0)
+            {
+                enemiesSpawned++;
+                enemiesLeftToSpawn--;
+                SpawnEnemy();
+            }
+        }
+
+        if (activeEnemies == 0 && enemiesLeftToSpawn == 0 && currentWaveIndex < waves.Count - 1)
+        {
+            currentWaveIndex++;
+            StartWave();
+        }
     }
 }
