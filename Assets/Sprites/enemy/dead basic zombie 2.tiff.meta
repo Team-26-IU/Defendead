@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd0a04f74bfe5bc4b86d02fb2a9062e4
+guid: 8aef0216476f564418e77f2f94f7535d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,70 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Movement basic_0
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 363
-        width: 620
-        height: 1050
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33563c71302e998458be781851a7ff2b
-      internalID: -1681180648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Movement basic_1
-      rect:
-        serializedVersion: 2
-        x: 870
-        y: 360
-        width: 620
-        height: 1050
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e19fd78bc0269d94f83d34c000e71ec0
-      internalID: 2113971369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Movement basic_2
-      rect:
-        serializedVersion: 2
-        x: 1615
-        y: 366
-        width: 620
-        height: 1050
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07f8241ec6cb8a34696f62b0aff1178f
-      internalID: 1911497864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -169,10 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Movement basic_0: -1681180648
-      Movement basic_1: 2113971369
-      Movement basic_2: 1911497864
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
