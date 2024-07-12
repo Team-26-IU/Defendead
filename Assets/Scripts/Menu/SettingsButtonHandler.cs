@@ -5,6 +5,6 @@ public class SettingsButtonHandler : MonoBehaviour
 {
     public void LoadSettingsScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }

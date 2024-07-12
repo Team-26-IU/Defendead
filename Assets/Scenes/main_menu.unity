@@ -917,7 +917,7 @@ GameObject:
   - component: {fileID: 1034307875}
   - component: {fileID: 1034307876}
   m_Layer: 5
-  m_Name: StoreButtonHandlerObject
+  m_Name: ExitButtonHandlerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1034307874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 727e66f2ad44747a497e45815014b036, type: 3}
+  m_Script: {fileID: 11500000, guid: efc08db30929f4149a882df7c116acd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1152874637
@@ -1012,7 +1012,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 22a9ff2c3afac47bebefe9bdac6184bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47446281b5a114c98a42a8b4e034f43f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1405885435}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 1775230424}
   - component: {fileID: 1775230423}
   m_Layer: 5
-  m_Name: StorButton
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,8 +1589,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1034307876}
-        m_TargetAssemblyTypeName: gostoremenu, Assembly-CSharp
-        m_MethodName: LoadgotostoreScene
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
