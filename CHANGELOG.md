@@ -1,4 +1,4 @@
-## Unreleased
+## [0.4.1](https://gitlab.pg.innopolis.university/tower-defence1/tower-defence-game-group-26/-/commit/d1e36a6a1341624a2c97252b00da0f59ba72020f)
 
 ### Added
 - Bullet sprites
@@ -6,10 +6,7 @@
 - Moving between two maps on choice map screen
 
 ### Fixed
-
-### Changed
-
-### Removed
+- update sprites
 
 
 ## [0.3.1](https://gitlab.pg.innopolis.university/tower-defence1/tower-defence-game-group-26/-/commit/df00d78120a87ff58915626ef7e592343c140493) - 2023-07-08
