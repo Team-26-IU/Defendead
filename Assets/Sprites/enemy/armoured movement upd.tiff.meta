@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd0a04f74bfe5bc4b86d02fb2a9062e4
+guid: a98af302dae33b94287a8adb9570fc86
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,64 +97,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Movement basic_0
+      name: armoured movement upd_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 363
-        width: 620
-        height: 1050
+        x: 42
+        y: 327
+        width: 712
+        height: 1073
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33563c71302e998458be781851a7ff2b
-      internalID: -1681180648
+      spriteID: 2100f538958323549898dd190614f817
+      internalID: 90193638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement basic_1
+      name: armoured movement upd_1
       rect:
         serializedVersion: 2
-        x: 870
-        y: 360
-        width: 620
-        height: 1050
+        x: 838
+        y: 311
+        width: 662
+        height: 1084
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e19fd78bc0269d94f83d34c000e71ec0
-      internalID: 2113971369
+      spriteID: ef559dd4c997b7642ac440d8ad137d5c
+      internalID: -369641846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement basic_2
+      name: armoured movement upd_2
       rect:
         serializedVersion: 2
-        x: 1615
-        y: 366
-        width: 620
-        height: 1050
+        x: 1583
+        y: 325
+        width: 648
+        height: 1091
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07f8241ec6cb8a34696f62b0aff1178f
-      internalID: 1911497864
+      spriteID: 9b4899fe4fe3f5b45b6bd62c222095c1
+      internalID: -718109206
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Movement basic_0: -1681180648
-      Movement basic_1: 2113971369
-      Movement basic_2: 1911497864
+      armoured movement upd_0: 90193638
+      armoured movement upd_1: -369641846
+      armoured movement upd_2: -718109206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

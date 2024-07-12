@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd0a04f74bfe5bc4b86d02fb2a9062e4
+guid: 3df8bd0f0a860974aa3d67bac4219497
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Movement basic_0
+      name: hided movement upd_3
       rect:
         serializedVersion: 2
-        x: 139
-        y: 363
-        width: 620
-        height: 1050
+        x: 109
+        y: 334
+        width: 655
+        height: 1070
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33563c71302e998458be781851a7ff2b
-      internalID: -1681180648
+      spriteID: 906bd9507f014234eaccd6c3ca9be660
+      internalID: -942828408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement basic_1
+      name: hided movement upd_28
       rect:
         serializedVersion: 2
-        x: 870
-        y: 360
-        width: 620
-        height: 1050
+        x: 803
+        y: 334
+        width: 655
+        height: 1070
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e19fd78bc0269d94f83d34c000e71ec0
-      internalID: 2113971369
+      spriteID: c689e579da7d7f04187ef347957012df
+      internalID: -1589852235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement basic_2
+      name: hided movement upd_30
       rect:
         serializedVersion: 2
-        x: 1615
-        y: 366
-        width: 620
-        height: 1050
+        x: 1513
+        y: 336
+        width: 655
+        height: 1070
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07f8241ec6cb8a34696f62b0aff1178f
-      internalID: 1911497864
+      spriteID: ae40fccd66ca93e459b33579d005ca39
+      internalID: 1925934112
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,45 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Movement basic_0: -1681180648
-      Movement basic_1: 2113971369
-      Movement basic_2: 1911497864
+      hided movement upd_0: 1041917165
+      hided movement upd_1: 1312486599
+      hided movement upd_10: 1960303152
+      hided movement upd_11: 2104937570
+      hided movement upd_12: 178063184
+      hided movement upd_13: -496180056
+      hided movement upd_14: -216963649
+      hided movement upd_15: 1315844893
+      hided movement upd_16: -1331826115
+      hided movement upd_17: -1921203818
+      hided movement upd_18: 1117205588
+      hided movement upd_19: 851991997
+      hided movement upd_2: 1449591095
+      hided movement upd_20: -1974203725
+      hided movement upd_21: -602590447
+      hided movement upd_22: 1607553970
+      hided movement upd_23: 1032896990
+      hided movement upd_24: -1577144308
+      hided movement upd_25: -108309919
+      hided movement upd_26: -817776370
+      hided movement upd_28: -1589852235
+      hided movement upd_29: 2146890129
+      hided movement upd_3: -942828408
+      hided movement upd_30: 1925934112
+      hided movement upd_31: -209494791
+      hided movement upd_32: -1564932821
+      hided movement upd_33: -2101621364
+      hided movement upd_34: 264632528
+      hided movement upd_35: -1815300884
+      hided movement upd_36: -1677377142
+      hided movement upd_37: -2003575372
+      hided movement upd_38: -1851553228
+      hided movement upd_39: 1229861803
+      hided movement upd_4: -14739018
+      hided movement upd_5: 1434200589
+      hided movement upd_6: -978928208
+      hided movement upd_7: 388743366
+      hided movement upd_8: -912401133
+      hided movement upd_9: 397082597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
