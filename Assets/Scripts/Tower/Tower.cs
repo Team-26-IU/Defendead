@@ -1,23 +1,29 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public abstract class Tower : MonoBehaviour
 {
-    public float attackRadius = 5f;
-    public float attackInterval = 1f;
-    public int damage = 4;
+    protected float attackRadius;
+    protected float attackInterval;
+    protected int damage;
+    protected Vector2 diffPosition;
 
     private float attackTimer;
-    private Transform target;
+    protected Transform target;
 
-    void Start()
+    protected GameObject bulletPrefab; 
+
+    protected virtual void Start()
     {
         attackTimer = attackInterval;
     }
 
-    void Update()
+    protected virtual void Awake()
     {
-      
+        InitializeAttributes();
+    }
 
+    private void Update()
+    {
         FindTarget();
         if (target)
         {
@@ -30,43 +36,17 @@ public class Tower : MonoBehaviour
         }
     }
 
-    void FindTarget()
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackRadius);
-        float closestDistance = attackRadius;
-        Transform closestTarget = null;
+    protected abstract void FindTarget();
 
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.CompareTag("Enemy"))
-            {
-                float distance = Vector2.Distance(transform.position, collider.transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestTarget = collider.transform;
-                }
-            }
-        }
+    protected abstract void Attack();
 
-        target = closestTarget;
-    }
-
-    void Attack()
-    {
-        if (target)
-        {
-            Enemy enemy = target.GetComponent<Enemy>();
-            if (enemy)
-            {
-                enemy.EnemyHealth.DealDamage(damage);
-            }
-        }
-    }
-
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
+    
+    protected abstract void InitializeAttributes();
+    
+    public Vector2 DiffPos => diffPosition;
 }

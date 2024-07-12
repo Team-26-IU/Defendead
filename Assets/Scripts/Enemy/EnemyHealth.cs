@@ -6,25 +6,23 @@ public class EnemyHealth : MonoBehaviour
 {
     public static Action<Enemy> OnEnemyKilled;
     public static Action<Enemy> OnEnemyHit;
-
-    [SerializeField] private float maxHealth;
     [SerializeField] private Image healthBar;
     private float CurrentHealth { get; set; }
     private Enemy _enemy;
     private EnemyFX _enemyFX;
-    
+
     private void Start()
     {
-        CurrentHealth = maxHealth;
         _enemy = GetComponent<Enemy>();
         _enemyFX = GetComponent<EnemyFX>();
+        CurrentHealth = _enemy.MaxHealth;
     }
 
     private void Update()
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount,CurrentHealth / maxHealth, Time.deltaTime * 10f);
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, CurrentHealth / _enemy.MaxHealth, Time.deltaTime * 10f);
     }
-    
+
     public void DealDamage(float damageReceived)
     {
         CurrentHealth -= damageReceived;
@@ -34,14 +32,15 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
     }
-    
+
     public void ResetHealth()
     {
-        CurrentHealth = maxHealth;
+        CurrentHealth = _enemy.MaxHealth;
         healthBar.fillAmount = 1f;
     }
+
     private void Die()
     {
-      Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

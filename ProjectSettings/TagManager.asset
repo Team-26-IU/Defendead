@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - BuildSite
-  - Enemy
+  - DefaultEnemy
+  - HeavyEnemy
+  - StealthEnemy
   layers:
   - Default
   - TransparentFX
