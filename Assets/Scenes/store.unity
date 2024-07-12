@@ -200,7 +200,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 693848480}
         m_TargetAssemblyTypeName: gotomenu, Assembly-CSharp
-        m_MethodName: LoadgotomenuScene
+        m_MethodName: LoadgotomapmenuScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

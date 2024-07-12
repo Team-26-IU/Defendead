@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainBuilding : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 500;
     private int currentHealth;
 
     public delegate void OnHealthChanged(int currentHealth, int maxHealth);
@@ -39,8 +39,6 @@ public class MainBuilding : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Главное здание разрушено!");
-        // Логика окончания игры или перезапуска уровня
         SceneManager.LoadScene(1);
     }
 }

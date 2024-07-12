@@ -168,17 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3132fdba3d14b45cbbd264f7a94b1f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - defaultEnemyCount: 5
-    heavyEnemyCount: 5
-    stealthEnemyCount: 5
-  - defaultEnemyCount: 10
-    heavyEnemyCount: 10
-    stealthEnemyCount: 10
-  - defaultEnemyCount: 15
-    heavyEnemyCount: 15
-    stealthEnemyCount: 15
-  delayBtwSpawns: 1.5
 --- !u!114 &28778001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,16 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005aa1a3397584d239d3070f97a77f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools:
-  - tag: DefaultEnemy
-    prefab: {fileID: 195540707}
-    size: 30
-  - tag: StealthEnemy
-    prefab: {fileID: 1982527853}
-    size: 30
-  - tag: HeavyEnemy
-    prefab: {fileID: 1606043286}
-    size: 30
+  defaultEnemyPrefab: {fileID: 195540707}
+  heavyEnemyPrefab: {fileID: 1606043286}
+  stealthEnemyPrefab: {fileID: 1982527853}
 --- !u!1 &76845905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,7 +3231,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -20
-  m_Sprite: {fileID: -137579791, guid: 7a7beb6b8aa77574d80b84731098ba01, type: 3}
+  m_Sprite: {fileID: 90193638, guid: a98af302dae33b94287a8adb9570fc86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3257,7 +3239,7 @@ SpriteRenderer:
   m_Size: {x: 7.120932, y: 10.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1606043294
