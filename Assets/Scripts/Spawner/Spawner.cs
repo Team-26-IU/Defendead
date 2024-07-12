@@ -65,7 +65,7 @@ public class Spawner : MonoBehaviour
         waves.Add(new Wave {
             defaultEnemyCount = 15,
             heavyEnemyCount = 4,
-            stealthEnemyCount = 7
+            stealthEnemyCount = 8
         });
 
         waves.Add(new Wave {
