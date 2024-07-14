@@ -51,9 +51,19 @@ public class BuildingCreation : MonoBehaviour
         Quaternion buildRotation = buildPlace.transform.rotation;
         GameObject turretInstance = Instantiate(turretPrefab, towerPosition, buildRotation);
         Tower towerScript = turretInstance.GetComponent<Tower>();
-        turretInstance.transform.position += (Vector3)towerScript.DiffPos;
-        turretInstance.transform.SetParent(_towerContainer.transform);
-        buildPlace.SetActive(false);
-        buildMenu.SetActive(false);
+        if (CurrencyManager.instance.Coins >= towerScript.Price)
+        {
+            CurrencyManager.instance.SpendCoins(towerScript.Price);
+            turretInstance.transform.position += (Vector3)towerScript.DiffPos;
+            turretInstance.transform.SetParent(_towerContainer.transform);
+            buildPlace.SetActive(false);
+            buildMenu.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Not enough money");
+            Destroy(towerScript);
+            Destroy(turretInstance);
+        }
     }
 }

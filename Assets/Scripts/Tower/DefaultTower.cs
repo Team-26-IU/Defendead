@@ -10,7 +10,8 @@ public class DefaultTower : Tower
         attackInterval = 1.5f;
         damage = 20;
         diffPosition = new Vector2(0f, 120f);
-        bulletPrefab = bulletType1Prefab; 
+        bulletPrefab = bulletType1Prefab;
+        price = 50;
     }
 
     protected override void FindTarget()

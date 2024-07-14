@@ -10,7 +10,8 @@ public class ScanTower : Tower
         attackInterval = 1.5f;
         damage = 20;
         diffPosition = new Vector2(2f, 140f);
-        bulletPrefab = bulletType2Prefab; 
+        bulletPrefab = bulletType2Prefab;
+        price = 75;
     }
 
     protected override void FindTarget()
