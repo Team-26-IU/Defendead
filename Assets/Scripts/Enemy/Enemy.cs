@@ -128,6 +128,8 @@ public abstract class Enemy : MonoBehaviour
 
     public float MaxHealth => maxHealth;
 
+    public int Coins => deathCoinReward;
+
     public bool Hide => hide;
 
     public bool Heavy => heavy;

@@ -5,6 +5,7 @@ public abstract class Tower : MonoBehaviour
     protected float attackRadius;
     protected float attackInterval;
     protected int damage;
+    protected int price;
     protected Vector2 diffPosition;
 
     private float attackTimer;
@@ -49,4 +50,6 @@ public abstract class Tower : MonoBehaviour
     protected abstract void InitializeAttributes();
     
     public Vector2 DiffPos => diffPosition;
+
+    public int Price => price;
 }
