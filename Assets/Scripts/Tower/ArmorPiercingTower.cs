@@ -10,6 +10,7 @@ public class ArmorPiercingTower : Tower
         attackInterval = 3f;
         damage = 50;
         diffPosition = new Vector2(15f, 130f);
+        price = 100;
 
         bulletPrefab = armorPiercingBulletPrefab; 
     }

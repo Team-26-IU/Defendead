@@ -9,13 +9,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private Image healthBar;
     private float CurrentHealth { get; set; }
     private Enemy _enemy;
-    private EnemyFX _enemyFX;
+    private int _coinDropAmount;
 
     private void Start()
     {
         _enemy = GetComponent<Enemy>();
-        _enemyFX = GetComponent<EnemyFX>();
         CurrentHealth = _enemy.MaxHealth;
+        _coinDropAmount = _enemy.Coins;
     }
 
     private void Update()
@@ -41,6 +41,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        CurrencyManager.instance.AddCoins(_coinDropAmount);
         Destroy(gameObject);
     }
 }
