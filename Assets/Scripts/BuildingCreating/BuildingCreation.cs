@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuildingCreation : MonoBehaviour
 {
@@ -9,8 +9,24 @@ public class BuildingCreation : MonoBehaviour
 
     void Start()
     {
-        _towerContainer = new GameObject("Towers");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        if (GameObject.Find("Towers") == null)
+        {
+            _towerContainer = new GameObject("Towers");
+            DontDestroyOnLoad(_towerContainer);
+        }
+        else
+        {
+            _towerContainer = GameObject.Find("Towers");
+        }
+
         buildMenu.SetActive(false);
+        
+        if (gameObject.GetComponent<Camera>() != null)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Update()
@@ -40,13 +56,12 @@ public class BuildingCreation : MonoBehaviour
         }
     }
 
-
     public void BuildTurret(GameObject turretPrefab)
     {
         Vector2 towerPosition = buildPlace.transform.position;
         if (turretPrefab.name == "Turret")
         {
-            towerPosition += new Vector2(0, -20 );
+            towerPosition += new Vector2(0, -20);
         }
         Quaternion buildRotation = buildPlace.transform.rotation;
         GameObject turretInstance = Instantiate(turretPrefab, towerPosition, buildRotation);
@@ -65,5 +80,20 @@ public class BuildingCreation : MonoBehaviour
             Destroy(towerScript);
             Destroy(turretInstance);
         }
+    }
+    
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (_towerContainer != null)
+        {
+            Destroy(_towerContainer);
+        }
+        
+        if (gameObject.GetComponent<Camera>() != null)
+        {
+            Destroy(gameObject);
+        }
+        
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
