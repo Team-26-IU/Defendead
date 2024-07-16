@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
+      - m_Target: {fileID: 519420035}
         m_TargetAssemblyTypeName: BuildingCreation, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 2
@@ -429,7 +429,6 @@ GameObject:
   - component: {fileID: 195540713}
   - component: {fileID: 195540712}
   - component: {fileID: 195540710}
-  - component: {fileID: 195540709}
   - component: {fileID: 195540708}
   - component: {fileID: 195540716}
   m_Layer: 0
@@ -452,20 +451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1911110772}
---- !u!114 &195540709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195540707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cadc3064027164704aaa5789eb25de15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDamageSpawnPosition: {fileID: 743633920}
-  _enemy: {fileID: 0}
 --- !u!114 &195540710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,8 +1024,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1122,20 +1107,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc67e31ac0856142a1cacecb369af35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildMenu: {fileID: 1978286749}
-  buildPlace: {fileID: 1412662537}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1121,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 100
   currencyDisplay: {fileID: 1418272195}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc67e31ac0856142a1cacecb369af35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildMenu: {fileID: 1978286749}
+  buildPlace: {fileID: 1412662537}
 --- !u!1 &525623827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,7 +1880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
+      - m_Target: {fileID: 519420035}
         m_TargetAssemblyTypeName: BuildingCreation, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 2
@@ -2107,7 +2092,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1110808821}
+  - {fileID: 1690710188}
   - {fileID: 708462773}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2226,7 +2211,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110808820}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2234,12 +2219,12 @@ RectTransform:
   - {fileID: 495437102}
   - {fileID: 1651763429}
   - {fileID: 759632451}
-  m_Father: {fileID: 953051760}
+  m_Father: {fileID: 1690710188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23}
-  m_SizeDelta: {x: -551.3059, y: -611.5326}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1110808822
 MonoBehaviour:
@@ -3149,7 +3134,6 @@ GameObject:
   - component: {fileID: 1606043292}
   - component: {fileID: 1606043291}
   - component: {fileID: 1606043290}
-  - component: {fileID: 1606043289}
   - component: {fileID: 1606043288}
   - component: {fileID: 1606043287}
   m_Layer: 0
@@ -3186,20 +3170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 787311031}
---- !u!114 &1606043289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606043286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cadc3064027164704aaa5789eb25de15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDamageSpawnPosition: {fileID: 483840740}
-  _enemy: {fileID: 0}
 --- !u!114 &1606043290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3537,6 +3507,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651763428}
   m_CullTransparentMesh: 1
+--- !u!1 &1690710187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690710188}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1690710188
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690710187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1110808821}
+  m_Father: {fileID: 953051760}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -23}
+  m_SizeDelta: {x: -551.3059, y: -611.5326}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1692854521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,7 +3861,6 @@ GameObject:
   - component: {fileID: 1982527859}
   - component: {fileID: 1982527858}
   - component: {fileID: 1982527857}
-  - component: {fileID: 1982527856}
   - component: {fileID: 1982527855}
   - component: {fileID: 1982527854}
   m_Layer: 0
@@ -3892,20 +3897,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 306378794}
---- !u!114 &1982527856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982527853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cadc3064027164704aaa5789eb25de15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDamageSpawnPosition: {fileID: 2126975703}
-  _enemy: {fileID: 0}
 --- !u!114 &1982527857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4126,7 +4117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
+      - m_Target: {fileID: 519420035}
         m_TargetAssemblyTypeName: BuildingCreation, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 2
