@@ -28,7 +28,6 @@ public class BuildingCreation : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
