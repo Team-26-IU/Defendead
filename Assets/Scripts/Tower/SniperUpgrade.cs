@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 
-public class DefaultTower : Tower
+public class SniperUpgrade : Tower
 {
     [SerializeField] private GameObject bulletType1Prefab; 
 
     protected override void InitializeAttributes()
     {
-        attackRadius = 350f;
+        attackRadius = 500f;
         attackInterval = 1.5f;
-        damage = 20;
+        damage = 35;
         diffPosition = new Vector2(0f, 120f);
         bulletPrefab = bulletType1Prefab;
-        price = 50;
-        sellPrice = 25;
+        sellPrice = 50;
     }
 
     protected override void FindTarget()

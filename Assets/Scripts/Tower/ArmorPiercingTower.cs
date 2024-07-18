@@ -11,6 +11,7 @@ public class ArmorPiercingTower : Tower
         damage = 50;
         diffPosition = new Vector2(15f, 130f);
         price = 100;
+        sellPrice = 50;
 
         bulletPrefab = armorPiercingBulletPrefab; 
     }
