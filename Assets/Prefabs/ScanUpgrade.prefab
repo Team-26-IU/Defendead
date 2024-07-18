@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3400330828692173724}
   - component: {fileID: -7499738821766202997}
-  - component: {fileID: 7997556307381797314}
-  - component: {fileID: 8271400033105839178}
+  - component: {fileID: -6231508546504068870}
+  - component: {fileID: 8220770910832049201}
   m_Layer: 0
-  m_Name: Sniper
-  m_TagString: SniperTower
+  m_Name: ScanUpgrade
+  m_TagString: ScanTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 23, y: 23, z: 0}
+  m_LocalScale: {x: 20, y: 20, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,31 +75,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -20
-  m_Sprite: {fileID: -1998588581, guid: 8d9c362fdd6aba44785cb1d8091b1028, type: 3}
+  m_Sprite: {fileID: 1347922880, guid: dad80db4da255434fbe479585e0696cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.56, y: 0.75}
+  m_Size: {x: 5.600169, y: 10.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7997556307381797314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5859847177409199426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f55ab222f9a40099690c98822c2b84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletType1Prefab: {fileID: 2490036367453148344, guid: a7f5a51a368f1492ebe2ae61541e9288, type: 3}
---- !u!61 &8271400033105839178
+--- !u!61 &-6231508546504068870
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,12 +122,25 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.8, y: 7.77}
-    newSize: {x: 0.56, y: 0.75}
+    oldSize: {x: 5.0801535, y: 9.440001}
+    newSize: {x: 5.600169, y: 10.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.8, y: 7.77}
+  m_Size: {x: 5.600169, y: 10.09}
   m_EdgeRadius: 0
+--- !u!114 &8220770910832049201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859847177409199426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7d00b7ba594a6a9c600b527a055eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletType2Prefab: {fileID: 2968072923595197355, guid: 4f350432ff2fe4583adab31f46ee521b, type: 3}

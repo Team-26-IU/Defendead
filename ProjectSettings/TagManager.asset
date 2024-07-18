@@ -8,6 +8,11 @@ TagManager:
   - DefaultEnemy
   - HeavyEnemy
   - StealthEnemy
+  - Tower
+  - UpgradeMenu
+  - ScanTower
+  - TurretTower
+  - SniperTower
   layers:
   - Default
   - TransparentFX

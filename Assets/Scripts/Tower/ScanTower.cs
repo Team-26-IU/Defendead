@@ -12,6 +12,8 @@ public class ScanTower : Tower
         diffPosition = new Vector2(2f, 140f);
         bulletPrefab = bulletType2Prefab;
         price = 75;
+        sellPrice = 40;
+        upgradePrice = 60;
     }
 
     protected override void FindTarget()
