@@ -12,7 +12,7 @@ public class CurrencyDisplay : MonoBehaviour
 
     void Start()
     {
-        UpdateCoinDisplay(100);
+        UpdateCoinDisplay(CurrencyManager.instance.Coins);
     }
 
     public void UpdateCoinDisplay(int amount)

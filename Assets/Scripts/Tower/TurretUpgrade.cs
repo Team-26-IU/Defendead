@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 
-public class DefaultTower : Tower
+public class TurretUpgrade : Tower
 {
-    [SerializeField] private GameObject bulletType1Prefab; 
+    [SerializeField] private GameObject armorPiercingBulletPrefab;
 
     protected override void InitializeAttributes()
     {
         attackRadius = 350f;
-        attackInterval = 1.5f;
-        damage = 20;
-        diffPosition = new Vector2(0f, 120f);
-        bulletPrefab = bulletType1Prefab;
-        price = 50;
-        sellPrice = 25;
+        attackInterval = 2f;
+        damage = 30;
+        diffPosition = new Vector2(5f, 0f);
+        price = 100;
+        sellPrice = 90;
+
+        bulletPrefab = armorPiercingBulletPrefab; 
     }
 
     protected override void FindTarget()
@@ -23,7 +24,7 @@ public class DefaultTower : Tower
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("DefaultEnemy"))
+            if (collider.CompareTag("HeavyEnemy") || collider.CompareTag("DefaultEnemy"))
             {
                 float distance = Vector2.Distance(transform.position, collider.transform.position);
                 if (distance < closestDistance)
@@ -36,13 +37,16 @@ public class DefaultTower : Tower
 
         target = closestTarget;
     }
-    
     protected override void Attack()
     {
         if (target)
         {
-            GameObject bulletObject = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Vector3 offset = new Vector3(50f, 52, 0); 
+            Vector3 newPos = transform.position + offset; // change the position with offset
+            GameObject bulletObject = Instantiate(bulletPrefab, newPos, Quaternion.identity);
             Bullet bullet = bulletObject.GetComponent<Bullet>();
+
+            
             bullet.Initialize(damage, target);
         }
     }

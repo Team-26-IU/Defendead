@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3400330828692173724}
   - component: {fileID: -7499738821766202997}
-  - component: {fileID: 7997556307381797314}
   - component: {fileID: 8271400033105839178}
+  - component: {fileID: -540556608159137610}
   m_Layer: 0
-  m_Name: Sniper
+  m_Name: SniperUpgrade
   m_TagString: SniperTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -20
-  m_Sprite: {fileID: -1998588581, guid: 8d9c362fdd6aba44785cb1d8091b1028, type: 3}
+  m_Sprite: {fileID: -345807013, guid: 8d9c362fdd6aba44785cb1d8091b1028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7997556307381797314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5859847177409199426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f55ab222f9a40099690c98822c2b84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletType1Prefab: {fileID: 2490036367453148344, guid: a7f5a51a368f1492ebe2ae61541e9288, type: 3}
 --- !u!61 &8271400033105839178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.8, y: 7.77}
+    oldSize: {x: 6.34, y: 8.47}
     newSize: {x: 0.56, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -144,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.8, y: 7.77}
   m_EdgeRadius: 0
+--- !u!114 &-540556608159137610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859847177409199426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af918c5a184d48b682c1d8d34ef706b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletType1Prefab: {fileID: 2490036367453148344, guid: a7f5a51a368f1492ebe2ae61541e9288, type: 3}
