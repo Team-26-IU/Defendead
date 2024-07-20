@@ -6,13 +6,12 @@ public class TurretUpgrade : Tower
 
     protected override void InitializeAttributes()
     {
-        attackRadius = 350f;
+        attackRadius = 425f;
         attackInterval = 2f;
-        damage = 30;
+        damage = 50;
         diffPosition = new Vector2(5f, 0f);
         price = 100;
         sellPrice = 90;
-
         bulletPrefab = armorPiercingBulletPrefab; 
     }
 
@@ -41,8 +40,8 @@ public class TurretUpgrade : Tower
     {
         if (target)
         {
-            Vector3 offset = new Vector3(50f, 52, 0); 
-            Vector3 newPos = transform.position + offset; // change the position with offset
+            Vector3 offset = new Vector3(10f, 65, 0); 
+            Vector3 newPos = transform.position + offset; 
             GameObject bulletObject = Instantiate(bulletPrefab, newPos, Quaternion.identity);
             Bullet bullet = bulletObject.GetComponent<Bullet>();
 

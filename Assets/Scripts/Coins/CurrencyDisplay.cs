@@ -35,7 +35,7 @@ public class CurrencyDisplay : MonoBehaviour
             digitImage.sprite = digitSprites[digit];
             
             RectTransform rectTransform = digitObject.GetComponent<RectTransform>();
-            rectTransform.anchoredPosition = new Vector2(i * 40, 0); // Здесь 50 - расстояние между цифрами. Настройте по необходимости.
+            rectTransform.anchoredPosition = new Vector2(i * 40, 0); 
 
             digitObjects.Add(digitObject);
         }

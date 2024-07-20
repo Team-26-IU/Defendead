@@ -11,9 +11,5 @@ public class BuildingManager : MonoBehaviour
         {
             buildingCreation.BuildTurret(turretPrefab);
         }
-        else
-        {
-            Debug.LogError("BuildingCreation component not found on the assigned GameObject.");
-        }
     }
 }
