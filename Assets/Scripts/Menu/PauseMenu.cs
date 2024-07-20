@@ -49,9 +49,14 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    public void QuitGame()
+    public void QuitGameMap1()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(1); 
+    }
+    public void QuitGameMap2()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(2); 
     }
 }

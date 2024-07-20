@@ -1,11 +1,13 @@
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class BuildingCreation : MonoBehaviour
 {
     public GameObject upgradeMenuScan;
-    public GameObject upgradeMenuTurret;
     public GameObject upgradeMenuSniper;
+    public GameObject upgradeMenuTurret;
     public GameObject buildMenu;
     public GameObject buildPlace;
     private GameObject _towerContainer;
@@ -27,8 +29,8 @@ public class BuildingCreation : MonoBehaviour
 
         buildMenu.SetActive(false);
         upgradeMenuScan.SetActive(false);
-        upgradeMenuSniper.SetActive(false);
         upgradeMenuTurret.SetActive(false);
+        upgradeMenuSniper.SetActive(false);
 
         if (gameObject.GetComponent<Camera>() != null)
         {
@@ -53,12 +55,12 @@ public class BuildingCreation : MonoBehaviour
                 }
             }
             
-            if (upgradeMenuSniper.activeSelf)
+            if (upgradeMenuTurret.activeSelf)
             {
-                RectTransform menuRect = upgradeMenuSniper.GetComponent<RectTransform>();
+                RectTransform menuRect = upgradeMenuTurret.GetComponent<RectTransform>();
                 if (!RectTransformUtility.RectangleContainsScreenPoint(menuRect, mousePosition, null))
                 {
-                    upgradeMenuSniper.SetActive(false);
+                    upgradeMenuTurret.SetActive(false);
                     return;
                 }
             }
@@ -73,12 +75,12 @@ public class BuildingCreation : MonoBehaviour
                 }
             }
             
-            if (upgradeMenuTurret.activeSelf)
+            if (upgradeMenuSniper.activeSelf)
             {
-                RectTransform menuRect = upgradeMenuTurret.GetComponent<RectTransform>();
+                RectTransform menuRect = upgradeMenuSniper.GetComponent<RectTransform>();
                 if (!RectTransformUtility.RectangleContainsScreenPoint(menuRect, mousePosition, null))
                 {
-                    upgradeMenuTurret.SetActive(false);
+                    upgradeMenuSniper.SetActive(false);
                     return;
                 }
             }
@@ -103,22 +105,22 @@ public class BuildingCreation : MonoBehaviour
                         upgradeMenuScan.SetActive(true);
                     }
                 }
-                else if (hit.collider.CompareTag("TurretTower") && !upgradeMenuSniper.activeSelf)
-                {
-                    currentTower = hit.collider.GetComponent<Tower>();
-                    if (currentTower)
-                    {
-                        upgradeMenuSniper.transform.position = mousePosition + panelOffset;
-                        upgradeMenuSniper.SetActive(true);
-                    }
-                }
-                else if (hit.collider.CompareTag("SniperTower") && !upgradeMenuTurret.activeSelf)
+                else if (hit.collider.CompareTag("TurretTower") && !upgradeMenuTurret.activeSelf)
                 {
                     currentTower = hit.collider.GetComponent<Tower>();
                     if (currentTower)
                     {
                         upgradeMenuTurret.transform.position = mousePosition + panelOffset;
                         upgradeMenuTurret.SetActive(true);
+                    }
+                }
+                else if (hit.collider.CompareTag("SniperTower") && !upgradeMenuSniper.activeSelf)
+                {
+                    currentTower = hit.collider.GetComponent<Tower>();
+                    if (currentTower)
+                    {
+                        upgradeMenuSniper.transform.position = mousePosition + panelOffset;
+                        upgradeMenuSniper.SetActive(true);
                     }
                 }
             }
@@ -128,10 +130,6 @@ public class BuildingCreation : MonoBehaviour
     public void BuildTurret(GameObject turretPrefab)
     {
         Vector2 towerPosition = buildPlace.transform.position;
-        if (turretPrefab.name == "Turret")
-        {
-            towerPosition += new Vector2(0, -20);
-        }
         Quaternion buildRotation = buildPlace.transform.rotation;
         GameObject turretInstance = Instantiate(turretPrefab, towerPosition, buildRotation);
         Tower towerScript = turretInstance.GetComponent<Tower>();
@@ -145,7 +143,6 @@ public class BuildingCreation : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough money");
             Destroy(turretInstance);
         }
     }
@@ -157,10 +154,6 @@ public class BuildingCreation : MonoBehaviour
             CurrencyManager.instance.SpendCoins(currentTower.Upgrade);
             Vector3 position = currentTower.transform.position;
             Vector3 diff = new Vector3(0, 0, 0);
-            if (currentTower.CompareTag("TurretTower"))
-            {
-                diff = new Vector3(-10, 20, 0);
-            }
             Destroy(currentTower.gameObject);
             GameObject upgradedTower = null;
             upgradedTower = Instantiate(upgrade, position + diff, Quaternion.identity);
@@ -169,8 +162,8 @@ public class BuildingCreation : MonoBehaviour
             {
                 upgradedTower.transform.SetParent(_towerContainer.transform);
                 upgradeMenuScan.SetActive(false);
-                upgradeMenuSniper.SetActive(false);
                 upgradeMenuTurret.SetActive(false);
+                upgradeMenuSniper.SetActive(false);
             }
         }
     }
@@ -179,12 +172,12 @@ public class BuildingCreation : MonoBehaviour
     {
         if (currentTower != null)
         {
-            CurrencyManager.instance.AddCoins(currentTower.Sell); // Возвращаем деньги за башню
+            CurrencyManager.instance.AddCoins(currentTower.Sell); 
             Destroy(currentTower.gameObject);
             upgradeMenuScan.SetActive(false);
-            upgradeMenuSniper.SetActive(false);
             upgradeMenuTurret.SetActive(false);
-            buildPlace.SetActive(true); // Включаем объект для размещения новых башен
+            upgradeMenuSniper.SetActive(false);
+            buildPlace.SetActive(true); 
         }
     }
 

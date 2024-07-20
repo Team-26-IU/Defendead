@@ -6,8 +6,6 @@ public class Spawner : MonoBehaviour
     private List<Wave> waves;
 
     private int currentWaveIndex = 0;
-    private int enemiesToSpawn;
-    private int enemiesSpawned;
     private int enemiesLeftToSpawn;
 
     private float delayBtwSpawns = 1.5f;
@@ -77,10 +75,8 @@ public class Spawner : MonoBehaviour
 
     private void StartWave()
     {
-        enemiesSpawned = 0;
         Wave currentWave = waves[currentWaveIndex];
         enemiesLeftToSpawn = currentWave.defaultEnemyCount + currentWave.heavyEnemyCount + currentWave.stealthEnemyCount;
-        enemiesToSpawn = enemiesLeftToSpawn;
     }
 
     private void SpawnEnemy()
@@ -125,7 +121,6 @@ public class Spawner : MonoBehaviour
             _spawnTimer = delayBtwSpawns;
             if (enemiesLeftToSpawn > 0)
             {
-                enemiesSpawned++;
                 enemiesLeftToSpawn--;
                 SpawnEnemy();
             }
