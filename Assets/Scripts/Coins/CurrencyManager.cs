@@ -4,7 +4,7 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager instance;
-    public int coins = 1000;
+    public int coins = 100;
     public CurrencyDisplay currencyDisplay;
 
     void Awake()

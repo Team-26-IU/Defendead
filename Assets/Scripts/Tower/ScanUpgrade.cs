@@ -6,9 +6,9 @@ public class ScanUpgrade : Tower
 
     protected override void InitializeAttributes()
     {
-        attackRadius = 500f;
+        attackRadius = 425f;
         attackInterval = 1.5f;
-        damage = 35;
+        damage = 30;
         diffPosition = new Vector2(2f, 140f);
         bulletPrefab = bulletType2Prefab;
         price = 75;
@@ -41,7 +41,7 @@ public class ScanUpgrade : Tower
     {
         if (target)
         {
-            Vector3 offset = new Vector3(50f, 52, 0); 
+            Vector3 offset = new Vector3(10f, 80, 0); 
             Vector3 newPos = transform.position + offset; 
             GameObject bulletObject = Instantiate(bulletPrefab, newPos, Quaternion.identity);
             Bullet bullet = bulletObject.GetComponent<Bullet>();

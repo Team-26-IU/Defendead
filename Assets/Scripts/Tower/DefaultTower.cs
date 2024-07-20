@@ -13,6 +13,7 @@ public class DefaultTower : Tower
         bulletPrefab = bulletType1Prefab;
         price = 50;
         sellPrice = 25;
+        upgradePrice = 30;
     }
 
     protected override void FindTarget()

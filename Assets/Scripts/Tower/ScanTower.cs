@@ -13,7 +13,7 @@ public class ScanTower : Tower
         bulletPrefab = bulletType2Prefab;
         price = 75;
         sellPrice = 40;
-        upgradePrice = 60;
+        upgradePrice = 45;
     }
 
     protected override void FindTarget()
@@ -42,7 +42,7 @@ public class ScanTower : Tower
     {
         if (target)
         {
-            Vector3 offset = new Vector3(50f, 52, 0); 
+            Vector3 offset = new Vector3(10f, 80, 0); 
             Vector3 newPos = transform.position + offset; 
             GameObject bulletObject = Instantiate(bulletPrefab, newPos, Quaternion.identity);
             Bullet bullet = bulletObject.GetComponent<Bullet>();
