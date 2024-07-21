@@ -1,3 +1,23 @@
+## [1.0.0](https://gitlab.pg.innopolis.university/tower-defence1/tower-defence-game-group-26/-/commit/c9640bdf044fdc1d4efb0d0bdd5d2726300bc13b)
+
+### Added
+- second map
+- button to quit the game
+- coins in map to buy towers
+- updates for towers
+
+
+### Fixed
+- sprites and offsets of bullets 
+
+### Updated
+- bullet sprites
+- speed of enemy, damage 
+- shop design
+
+
+
+
 ## [0.4.1](https://gitlab.pg.innopolis.university/tower-defence1/tower-defence-game-group-26/-/commit/d1e36a6a1341624a2c97252b00da0f59ba72020f)
 
 ### Added

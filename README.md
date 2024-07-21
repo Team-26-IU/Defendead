@@ -24,7 +24,6 @@ Players must strategically place their defensive towers along the path of the on
 - Wave-based gameplay with increasing difficulty
 - Shop with towers
 - In battle/game coins
-- Statistics
 - Settings menu 
 
 ## Usage instructions / Short user guide
@@ -40,8 +39,8 @@ protected and hidden zombies can only be killed by certain towers
 ## Project Installation / Deployment
 
 **To download game to your mashine:**
-1) Download **[this](MVP3.app.zip)** zip-archive
-2) Extract it, you will get the .app file
+1) Download zip-archive with the game from our gitlab
+2) Extract it, in the root package you will see the file called **MVP4.app*
 3) Run it and enjoy the game 
 
 **To play on Web:**
